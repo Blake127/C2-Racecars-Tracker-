@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="C2 Tire Tracker">
+  <meta name="description" content="C2 Race Cars tire pressure and stagger tracker.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>C2 Race Cars Tire Tracker</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="brand">
+      <div class="brand-mark" aria-label="C2"><span>C</span><strong>2</strong></div>
+      <div class="brand-name">RACE CARS</div>
+      <div class="brand-stripe" aria-hidden="true"></div>
+    </header>
+
+    <section class="stagger-card front">
+      <div class="stagger-title">FRONT STAGGER <span>(RF − LF)</span></div>
+      <div class="stagger-readout"><output id="frontStagger">0.000</output><span>in</span></div>
+    </section>
+
+    <section class="tracker-grid">
+      <article class="tire-card lf">
+        <h2>LEFT FRONT</h2>
+        <label>PSI
+          <div class="input-box"><input id="lfPsi" type="number" inputmode="decimal" step="0.1" placeholder="0.0"><span>psi</span></div>
+        </label>
+        <label>INCHES
+          <div class="input-box"><input id="lfIn" type="number" inputmode="decimal" step="0.001" placeholder="0.000"><span>in</span></div>
+        </label>
+      </article>
+
+      <div class="car-stage">
+        <img src="assets/street-stock-car.png" alt="Top-down black street stock race car">
+      </div>
+
+      <article class="tire-card rf">
+        <h2>RIGHT FRONT</h2>
+        <label>PSI
+          <div class="input-box"><input id="rfPsi" type="number" inputmode="decimal" step="0.1" placeholder="0.0"><span>psi</span></div>
+        </label>
+        <label>INCHES
+          <div class="input-box"><input id="rfIn" type="number" inputmode="decimal" step="0.001" placeholder="0.000"><span>in</span></div>
+        </label>
+      </article>
+
+      <article class="tire-card lr">
+        <h2>LEFT REAR</h2>
+        <label>PSI
+          <div class="input-box"><input id="lrPsi" type="number" inputmode="decimal" step="0.1" placeholder="0.0"><span>psi</span></div>
+        </label>
+        <label>INCHES
+          <div class="input-box"><input id="lrIn" type="number" inputmode="decimal" step="0.001" placeholder="0.000"><span>in</span></div>
+        </label>
+      </article>
+
+      <article class="tire-card rr">
+        <h2>RIGHT REAR</h2>
+        <label>PSI
+          <div class="input-box"><input id="rrPsi" type="number" inputmode="decimal" step="0.1" placeholder="0.0"><span>psi</span></div>
+        </label>
+        <label>INCHES
+          <div class="input-box"><input id="rrIn" type="number" inputmode="decimal" step="0.001" placeholder="0.000"><span>in</span></div>
+        </label>
+      </article>
+    </section>
+
+    <section class="stagger-card rear">
+      <div class="stagger-title">REAR STAGGER <span>(RR − LR)</span></div>
+      <div class="stagger-readout"><output id="rearStagger">0.000</output><span>in</span></div>
+    </section>
+
+    <div class="actions">
+      <button id="saveBtn" class="save" type="button"><span class="icon">▣</span> SAVE</button>
+      <button id="resetBtn" class="reset" type="button"><span class="icon">↻</span> RESET</button>
+    </div>
+    <div id="status" class="status" aria-live="polite"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

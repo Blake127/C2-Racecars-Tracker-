@@ -1,0 +1,187 @@
+:root{
+  --bg:#090b0e;
+  --panel:#111419;
+  --panel2:#171b20;
+  --line:#4b5059;
+  --text:#f5f6f8;
+  --muted:#aab0b8;
+  --orange:#ff4a0b;
+  --orange2:#ff6425;
+  --shadow:0 18px 40px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 50% 8%,rgba(255,74,11,.08),transparent 27%),
+    linear-gradient(180deg,#0d1014 0%,#080a0d 100%);
+}
+button,input{font:inherit}
+.app-shell{
+  width:min(100%,820px);
+  margin:0 auto;
+  padding:calc(18px + env(safe-area-inset-top)) 14px calc(28px + env(safe-area-inset-bottom));
+}
+.brand{text-align:center;margin-bottom:18px}
+.brand-mark{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:0;
+  font-size:clamp(68px,18vw,124px);
+  font-weight:1000;
+  font-style:italic;
+  line-height:.78;
+  letter-spacing:-.1em;
+}
+.brand-mark span{color:#f4f4f4}
+.brand-mark strong{color:var(--orange)}
+.brand-name{
+  margin-top:5px;
+  font-size:clamp(20px,5vw,34px);
+  font-style:italic;
+  font-weight:950;
+  letter-spacing:.10em;
+}
+.brand-stripe{
+  width:min(72%,520px);
+  height:5px;
+  margin:12px auto 0;
+  background:linear-gradient(90deg,transparent 0 10%,#fff 10% 28%,var(--orange) 28% 46%,transparent 46% 54%,var(--orange) 54% 72%,#fff 72% 90%,transparent 90%);
+  clip-path:polygon(0 35%,90% 0,100% 65%,10% 100%);
+}
+.stagger-card{
+  width:min(100%,410px);
+  margin:0 auto 18px;
+  padding:13px;
+  border:1px solid rgba(255,74,11,.85);
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(23,27,33,.97),rgba(12,15,19,.97));
+  box-shadow:var(--shadow);
+}
+.stagger-title{text-align:center;font-size:clamp(15px,3.7vw,20px);font-weight:900}
+.stagger-title span{color:var(--muted)}
+.stagger-readout{
+  margin-top:9px;
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#0d1014;
+}
+.stagger-readout output{font-size:clamp(38px,9vw,56px);font-weight:950;font-variant-numeric:tabular-nums}
+.stagger-readout span{color:var(--muted);font-weight:800}
+
+.tracker-grid{
+  display:grid;
+  grid-template-columns:minmax(116px,.78fr) minmax(150px,1.45fr) minmax(116px,.78fr);
+  grid-template-rows:1fr 1fr;
+  gap:12px 6px;
+  align-items:center;
+  min-height:760px;
+}
+.car-stage{
+  grid-column:2;
+  grid-row:1/3;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible;
+}
+.car-stage img{
+  width:150%;
+  max-width:none;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 18px 24px rgba(0,0,0,.58));
+}
+.tire-card{
+  position:relative;
+  z-index:2;
+  padding:12px;
+  border:1px solid #4d535d;
+  border-radius:14px;
+  background:linear-gradient(180deg,rgba(21,25,30,.98),rgba(13,16,20,.98));
+  box-shadow:var(--shadow);
+}
+.tire-card h2{
+  margin:0 0 14px;
+  text-align:center;
+  font-size:clamp(13px,3.3vw,18px);
+  font-weight:950;
+}
+.tire-card label{
+  display:block;
+  margin-top:14px;
+  font-size:clamp(12px,3vw,16px);
+  font-weight:900;
+}
+.input-box{position:relative;margin-top:7px}
+.input-box input{
+  width:100%;
+  min-height:58px;
+  border:1px solid #555c66;
+  border-radius:10px;
+  background:#0d1014;
+  color:white;
+  outline:none;
+  padding:9px 33px 9px 11px;
+  font-size:clamp(21px,5vw,30px);
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+  -moz-appearance:textfield;
+}
+.input-box input::-webkit-outer-spin-button,.input-box input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.input-box input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,74,11,.2)}
+.input-box span{
+  position:absolute;
+  right:9px;top:50%;transform:translateY(-50%);
+  color:var(--muted);font-size:11px;font-weight:800;pointer-events:none;
+}
+.lf{grid-column:1;grid-row:1}
+.rf{grid-column:3;grid-row:1}
+.lr{grid-column:1;grid-row:2}
+.rr{grid-column:3;grid-row:2}
+.rear{margin-top:18px}
+.actions{
+  width:min(100%,540px);
+  margin:18px auto 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.actions button{
+  min-height:66px;
+  border-radius:13px;
+  font-size:clamp(19px,4.7vw,26px);
+  font-weight:950;
+  cursor:pointer;
+}
+.save{border:0;background:linear-gradient(135deg,var(--orange),var(--orange2));color:white;box-shadow:0 12px 28px rgba(255,74,11,.2)}
+.reset{border:1px solid #5a606a;background:#111419;color:white}
+.icon{font-size:1.2em;margin-right:.25em}
+.status{min-height:24px;margin-top:10px;text-align:center;color:#a3edb4;font-weight:750}
+@media(max-width:560px){
+  .app-shell{padding-left:8px;padding-right:8px}
+  .tracker-grid{grid-template-columns:106px minmax(100px,1fr) 106px;gap:8px 1px;min-height:650px}
+  .car-stage img{width:165%}
+  .tire-card{padding:9px 7px}
+  .tire-card h2{font-size:12px}
+  .tire-card label{font-size:11px}
+  .input-box input{min-height:50px;padding-left:8px;padding-right:26px;font-size:20px}
+  .input-box span{right:6px;font-size:9px}
+}
+@media(max-width:390px){
+  .tracker-grid{grid-template-columns:98px 1fr 98px;min-height:610px}
+  .car-stage img{width:175%}
+  .tire-card{padding:8px 5px}
+  .input-box input{font-size:18px}
+}
